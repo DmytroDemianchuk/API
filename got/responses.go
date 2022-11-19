@@ -3,23 +3,21 @@ package got
 import "fmt"
 
 type assetsResponse struct {
-	Assets    []Asset `json:"data"`
-	Timestamp int64   `json:"timestamp"`
+	Assets []Asset
 }
 
 type assetResponse struct {
-	Asset     Asset `json:"data"`
-	Timestamp int64 `json:"timestamp"`
+	Asset Asset
 }
 
 type Asset struct {
-	ID        string `json:"id"`
-	FirstName string `json:"firstName"`
-	LastName  string `json:"lastName"`
-	Family    string `json:"family"`
+	ID           string `json:"id"`
+	Title        string `json:"title"`
+	Director     string `json:"director"`
+	Release_date string `json:"release_date"`
 }
 
 func (d Asset) Info() string {
-	return fmt.Sprintf("[ID] %s \n[FirstName] %s \n[LastName] %s \n[Family] %s",
-		d.ID, d.FirstName, d.LastName, d.Family)
+	return fmt.Sprintf("[ID] %s \n[Title] %s \n[Director] %s \n[ReleaseDate] %s",
+		d.ID, d.Title, d.Director, d.Release_date)
 }

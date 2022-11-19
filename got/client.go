@@ -31,7 +31,7 @@ func NewClient(timeout time.Duration) (*Client, error) {
 }
 
 func (c Client) GetAssets() ([]Asset, error) {
-	resp, err := c.client.Get("https://thronesapi.com/api/v2/Characters")
+	resp, err := c.client.Get("https://ghibliapi.herokuapp.com/films")
 	if err != nil {
 		return nil, err
 	}
@@ -51,8 +51,8 @@ func (c Client) GetAssets() ([]Asset, error) {
 	return r.Assets, nil
 }
 
-func (c Client) GetAsset(firstName string) (Asset, error) {
-	url := fmt.Sprintf("https://thronesapi.com/api/v2/Characters/%s", firstName)
+func (c Client) GetAsset(id string) (Asset, error) {
+	url := fmt.Sprintf("https://ghibliapi.herokuapp.com/films/%s", id)
 	resp, err := c.client.Get(url)
 	if err != nil {
 		return Asset{}, err
