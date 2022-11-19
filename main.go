@@ -14,7 +14,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	hero, err := coincapClient.GetAsset("Daenerys")
+	hero, err := coincapClient.GetAsset("2baf70d1-42bb-4437-b551-e5fed5a87abe")
 	if err != nil {
 		log.Fatal(err)
 	}
